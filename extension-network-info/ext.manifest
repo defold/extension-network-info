@@ -1,0 +1,7 @@
+name: "NetworkInfo"
+
+platforms:
+
+    ios:
+        context:
+            frameworks: ["CFNetwork", "CoreFoundation"]

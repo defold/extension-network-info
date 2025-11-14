@@ -1,0 +1,33 @@
+[project]
+title = NetworkInfo
+version = 1.0
+dependencies = 
+
+[bootstrap]
+main_collection = /example/example.collectionc
+
+[input]
+game_binding = /input/game.input_bindingc
+
+[display]
+width = 640
+height = 1136
+dynamic_orientation = 1
+
+[script]
+shared_state = 1
+
+[ios]
+bundle_identifier = com.defold.networkinfo
+
+[android]
+package = com.defold.networkinfo
+immersive_mode = 1
+display_cutout = 0
+minimum_sdk_version = 19
+
+[osx]
+bundle_identifier = com.defold.networkinfo
+
+[library]
+include_dirs = extension-network-info

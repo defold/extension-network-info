@@ -1,0 +1,5 @@
+function init(self)
+	pprint(networkinfo)
+	local info = networkinfo.get_proxy_info("https://www.defold.com")
+	pprint(info)
+end

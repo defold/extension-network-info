@@ -1,0 +1,22 @@
+- name: networkinfo
+  type: table
+  desc: Functions to get information about the network configuration of the device.
+
+  members:
+  - name: get_proxy_info
+    type: function
+    desc: Get information about proxies for a specific url. 
+    parameters:
+    - name: url
+      type: string
+      desc: |
+      The url to get proxy configurations for
+    returns:
+    - name: proxies
+      type: table
+      desc: |
+      A list of proxies to try in order. Each proxy has three values
+        type: direct (no proxy), http, socks
+        host: proxy url
+        port: proxy port number
+
