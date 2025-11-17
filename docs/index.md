@@ -15,7 +15,6 @@ To use Network Info extension in your Defold project, add a version of the Steam
 
 Select `Project->Fetch Libraries` once you have added the version to `game.project` to download the version and make it available in your project.
 
-
 ## Example
 
 [Refer to the example project](https://github.com/defold/extension-network-info/blob/master/example) to see an example of how the extension works.
