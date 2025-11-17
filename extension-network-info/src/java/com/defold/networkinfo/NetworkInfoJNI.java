@@ -24,8 +24,7 @@ public class NetworkInfoJNI {
     public NetworkInfoJNI() {
     }
 
-    public String getProxy(String url) {
-
+    public String GetProxyInfo(String url) {
         JSONArray jsonproxies = new JSONArray();
         try {
             ProxySelector proxySelector = ProxySelector.getDefault();

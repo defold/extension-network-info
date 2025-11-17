@@ -24,16 +24,10 @@
  *   type: direct (no proxy), http, socks
  *   host: proxy url
  *   port: proxy port number
- * @example foor
- * fsdf
- * dsfsdf
- * sdfsdf
- * bar
  */
 
 static int NetworkInfo_GetProxyInfo(lua_State* L)
 {
-    dmLogInfo("NetworkInfo_GetProxyInfo");
     DM_LUA_STACK_CHECK(L, 1);
     const char* url = luaL_checkstring(L, 1);
     NetworkInfo_PlatformGetProxyInfo(url, L);
@@ -55,13 +49,11 @@ static void LuaInit(lua_State* L)
 
 static dmExtension::Result AppInitializeNetworkInfo(dmExtension::AppParams* params)
 {
-    dmLogInfo("AppInitializeNetworkInfo");
     return dmExtension::RESULT_OK;
 }
 
 static dmExtension::Result InitializeNetworkInfo(dmExtension::Params* params)
 {
-    dmLogInfo("InitializeNetworkInfo");
     LuaInit(params->m_L);
     NetworkInfo_PlatformInitialize();
     return dmExtension::RESULT_OK;
@@ -83,7 +75,6 @@ DM_DECLARE_EXTENSION(EXTENSION_NAME, LIB_NAME, AppInitializeNetworkInfo, AppFina
 
 static  dmExtension::Result InitializeNetworkInfo(dmExtension::Params* params)
 {
-    dmLogInfo("Registered extension NetworkInfo (null)");
     return dmExtension::RESULT_OK;
 }
 

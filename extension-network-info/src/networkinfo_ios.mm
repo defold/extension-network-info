@@ -8,7 +8,6 @@ void NetworkInfo_PlatformInitialize() {}
 
 void NetworkInfo_PlatformGetProxyInfo(const char* url, lua_State* L)
 {
-    dmLogInfo("NetworkInfo_PlatformGetProxyInfo");
     CFDictionaryRef systemProxySettings = CFNetworkCopySystemProxySettings();
 
     CFURLRef urlref = CFURLCreateWithBytes(kCFAllocatorDefault, (const UInt8*)url, strlen(url), kCFStringEncodingUTF8, 0);
@@ -17,14 +16,7 @@ void NetworkInfo_PlatformGetProxyInfo(const char* url, lua_State* L)
 
     lua_newtable(L);
 
-    int proxy_count = proxies.count;
-    if (proxy_count == 0)
-    {
-        dmLogInfo("NetworkInfo_PlatformGetProxyInfo no proxies");
-        return;
-    }
-
-    for (int i = 0; i < proxy_count; i++)
+    for (int i = 0; i < proxies.count; i++)
     {
         lua_pushnumber(L, i + 1);
         lua_newtable(L);
@@ -60,8 +52,6 @@ void NetworkInfo_PlatformGetProxyInfo(const char* url, lua_State* L)
 
         lua_rawset(L, -3);
     }
-    
-
 }
 
 #endif

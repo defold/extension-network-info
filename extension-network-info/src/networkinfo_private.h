@@ -7,5 +7,4 @@
 void NetworkInfo_PlatformInitialize();
 void NetworkInfo_PlatformGetProxyInfo(const char* url, lua_State* L);
 
-
 #endif

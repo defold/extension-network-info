@@ -10,13 +10,13 @@
     - name: url
       type: string
       desc: |
-      The url to get proxy configurations for
+        The url to get proxy configurations for
     returns:
     - name: proxies
       type: table
       desc: |
-      A list of proxies to try in order. Each proxy has three values
-        type: direct (no proxy), http, socks
-        host: proxy url
-        port: proxy port number
+        A list of proxies to try in order. Each proxy has three values
+          type: direct (no proxy), http, socks
+          host: proxy url
+          port: proxy port number
 

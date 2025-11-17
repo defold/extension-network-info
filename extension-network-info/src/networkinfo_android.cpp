@@ -33,13 +33,13 @@ static char* CallCharMethodChar(jobject instance, jmethodID method, const char* 
     return result_cstr_copy;
 }
 
-void NetworkInfo_PlatformInitialize() {
-    dmLogInfo("NetworkInfo_PlatformInitialize");
+void NetworkInfo_PlatformInitialize()
+{
     dmAndroid::ThreadAttacher threadAttacher;
     JNIEnv* env = threadAttacher.GetEnv();
     jclass cls = dmAndroid::LoadClass(env, "com.defold.networkinfo.NetworkInfoJNI");
 
-    jmethodID jni_constructor = env->GetMethodID(cls, "<init>", "(Landroid/app/Activity;)V");
+    jmethodID jni_constructor = env->GetMethodID(cls, "<init>", "()V");
     g_NetworkInfo.m_JNI = env->NewGlobalRef(env->NewObject(cls, jni_constructor, threadAttacher.GetActivity()->clazz));
     g_NetworkInfo.m_GetProxyInfo = env->GetMethodID(cls, "GetProxyInfo", "(Ljava/lang/String;)Ljava/lang/String;");
 }
